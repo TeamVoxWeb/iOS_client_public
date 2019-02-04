@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForecastVC">
+            <connections>
+                <outlet property="forecastTableview" destination="atd-D8-Evd" id="m8p-zm-VSU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgH-wJ-jwO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT2-LK-o9v">
+                            <rect key="frame" x="15" y="12.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="4ry-ok-5cQ"/>
+                                <constraint firstAttribute="width" constant="50" id="7Cf-aF-oCT"/>
+                            </constraints>
+                            <state key="normal" image="Menu"/>
+                            <connections>
+                                <action selector="menuButtonClicked:" destination="-1" eventType="touchUpInside" id="VaB-jN-RaB"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-7M-1E2">
+                            <rect key="frame" x="150.5" y="26" width="74" height="23"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxz-05-sgj">
+                            <rect key="frame" x="310" y="12.5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="BW5-4B-DK2"/>
+                                <constraint firstAttribute="width" constant="50" id="Sin-As-ff7"/>
+                            </constraints>
+                            <state key="normal" image="refresh"/>
+                            <connections>
+                                <action selector="refreshClicked:" destination="-1" eventType="touchUpInside" id="PQ3-bC-e9o"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Zxz-05-sgj" firstAttribute="centerY" secondItem="bXJ-7M-1E2" secondAttribute="centerY" id="4XY-KV-F88"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="7l3-UG-oQc"/>
+                        <constraint firstItem="bXJ-7M-1E2" firstAttribute="centerX" secondItem="FgH-wJ-jwO" secondAttribute="centerX" id="AFN-sY-SfU"/>
+                        <constraint firstAttribute="bottom" secondItem="bXJ-7M-1E2" secondAttribute="bottom" constant="15" id="IKQ-TS-K4Q"/>
+                        <constraint firstItem="MT2-LK-o9v" firstAttribute="leading" secondItem="FgH-wJ-jwO" secondAttribute="leading" constant="15" id="L7D-0a-6hp"/>
+                        <constraint firstAttribute="height" constant="64" id="Ndb-HE-Sza"/>
+                        <constraint firstItem="MT2-LK-o9v" firstAttribute="centerY" secondItem="bXJ-7M-1E2" secondAttribute="centerY" id="VbZ-w3-T4U"/>
+                        <constraint firstAttribute="trailing" secondItem="Zxz-05-sgj" secondAttribute="trailing" constant="15" id="pzC-sH-dAw"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="atd-D8-Evd">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Lmu-P1-Wf6"/>
+                        <outlet property="delegate" destination="-1" id="a83-3n-WPV"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.58823529409999997" green="0.47843137250000001" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="atd-D8-Evd" secondAttribute="bottom" id="4uq-kG-SL0"/>
+                <constraint firstItem="atd-D8-Evd" firstAttribute="top" secondItem="FgH-wJ-jwO" secondAttribute="bottom" id="5fl-yT-GXe"/>
+                <constraint firstItem="FgH-wJ-jwO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Mk-LE-ZKM"/>
+                <constraint firstAttribute="trailing" secondItem="atd-D8-Evd" secondAttribute="trailing" id="WZe-cQ-lt3"/>
+                <constraint firstAttribute="trailing" secondItem="FgH-wJ-jwO" secondAttribute="trailing" id="dbN-fq-jVq"/>
+                <constraint firstItem="atd-D8-Evd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jSu-c1-Pp2"/>
+                <constraint firstItem="FgH-wJ-jwO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mhE-n5-A60"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Menu" width="25" height="25"/>
+        <image name="refresh" width="25" height="25"/>
+    </resources>
+</document>
